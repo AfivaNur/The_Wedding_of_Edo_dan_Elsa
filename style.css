@@ -1,0 +1,1288 @@
+
+/* ========================================
+   1. WARNA DAN PENGATURAN DASAR
+======================================== */
+:root {
+  --navy: #4c142a;
+  --navy2: #992f82;
+  --ivory: #fbf8f0;
+  --paper: #f4efe4;
+  --ink: #26384b;
+  --muted: #667587;
+  --line: #c8d1d5;
+  --gold: #b9a77e;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+}
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+.section {
+  position: relative;
+  padding: 82px 22px;
+  overflow: hidden;
+}
+
+/* ========================================
+   2. HALAMAN PEMBUKA
+======================================== */
+.cover {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  background: var(--navy);
+  color: var(--ivory);
+  text-align: center;
+  isolation: isolate;
+  padding: 55px 20px 75px;
+}
+
+.cover-wash {
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(244, 239, 228, 0.45);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.cover-content {
+  width: min(100%, 570px);
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.23em;
+  margin: 0 0 20px;
+}
+
+h1,
+h2,
+h3,
+.quote,
+.closing-names {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+}
+
+.cover h1 {
+  font-size: clamp(3.4rem, 12vw, 6.3rem);
+  line-height: 0.88;
+  margin: 28px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-wrap: anywhere;
+}
+
+.cover h1 i {
+  font-size: 0.6em;
+  color: #d8c8a5;
+  font-weight: 400;
+}
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  color: var(--gold);
+  font-size: 1.6rem;
+  margin: 22px auto;
+}
+
+.ornament span {
+  width: 52px;
+  height: 1px;
+  background: currentColor;
+}
+
+.cover-date {
+  letter-spacing: 0.12em;
+  margin: 0 0 40px;
+}
+
+.guest-intro {
+  font-size: 0.83rem;
+  margin: 0 0 5px;
+  color: #e1e5e9;
+}
+
+.guest-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.7rem;
+  margin: 0 0 23px;
+  overflow-wrap: anywhere;
+}
+
+.primary-btn,
+.outline-btn {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 22px;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.primary-btn {
+  color: var(--navy);
+  background: var(--ivory);
+  border: 1px solid var(--ivory);
+}
+
+.primary-btn:hover {
+  background: #e9dfca;
+}
+
+.small-note {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  margin-top: 22px;
+}
+
+.cover-bottom {
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+  right: 10px;
+  font-size: 0.57rem;
+  letter-spacing: 0.18em;
+  opacity: 0.75;
+  text-align: center;
+}
+
+/* ========================================
+   3. ORNAMEN DAUN
+======================================== */
+.botanical {
+  position: absolute;
+  width: 220px;
+  height: 340px;
+  opacity: 0.75;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.botanical-left {
+  left: -30px;
+  top: -15px;
+  transform: rotate(-12deg);
+}
+
+.botanical-right {
+  right: -30px;
+  bottom: -25px;
+  transform: rotate(165deg);
+}
+
+.botanical::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 88%;
+  left: 48%;
+  top: 5%;
+  background: #8da7bd;
+  transform: rotate(24deg);
+  border-radius: 4px;
+}
+
+.botanical::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 23px 56px at 38% 17%,
+      #7d9bb4 0 62%, transparent 65%
+    ),
+    radial-gradient(
+      ellipse 20px 48px at 64% 29%,
+      #a9bac6 0 62%, transparent 65%
+    ),
+    radial-gradient(
+      ellipse 24px 55px at 30% 42%,
+      #547b9c 0 62%, transparent 65%
+    ),
+    radial-gradient(
+      ellipse 20px 48px at 68% 55%,
+      #8da7bd 0 62%, transparent 65%
+    ),
+    radial-gradient(
+      ellipse 23px 55px at 36% 68%,
+      #a9bac6 0 62%, transparent 65%
+    ),
+    radial-gradient(
+      ellipse 19px 45px at 65% 79%,
+      #547b9c 0 62%, transparent 65%
+    );
+}
+
+/* ========================================
+   4. PEMBUKAAN DAN PROFIL MEMPELAI
+======================================== */
+.intro {
+  background: var(--ivory);
+  text-align: center;
+}
+
+.intro .eyebrow,
+.gallery .eyebrow,
+.gift .eyebrow,
+.rsvp .eyebrow,
+.closing .eyebrow,
+.event .eyebrow {
+  color: var(--navy2);
+}
+
+.quote {
+  max-width: 600px;
+  margin: 20px auto 8px;
+  font-size: clamp(1.6rem, 4vw, 2.25rem);
+  line-height: 1.25;
+  color: var(--navy);
+}
+
+.quote-source {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.body-copy {
+  max-width: 620px;
+  margin: 20px auto 32px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 0.93rem;
+}
+
+/* Susunan pasangan */
+.couple-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: start;
+  gap: 28px;
+  width: min(100%, 760px);
+  margin: 40px auto 0;
+}
+
+.person {
+  width: 100%;
+  min-width: 0;
+  text-align: center;
+}
+
+.person h2 {
+  color: var(--navy);
+  font-size: 2.3rem;
+  line-height: 1.15;
+  margin: 22px 0 5px;
+  overflow-wrap: anywhere;
+}
+
+.person p {
+  margin: 4px 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.person .parents {
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+/* Simbol di antara pasangan */
+.ampersand {
+  align-self: center;
+  padding-top: 30px;
+  font: 2.5rem "Cormorant Garamond", serif;
+  color: var(--gold);
+  text-align: center;
+}
+
+/* ========================================
+   5. BINGKAI FOTO MEMPELAI
+======================================== */
+.portrait {
+  width: 100%;
+  max-width: 250px;
+  height: 320px;
+  margin: 0 auto;
+  padding: 0;
+  border: 8px solid var(--white);
+  outline: 1px solid var(--line);
+  background: linear-gradient(145deg, #dce4e8, #aebfca);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gambar selalu mengikuti ukuran bingkai */
+.portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+/* Posisi foto pria */
+.portrait-groom img {
+  object-position: center 25%;
+}
+
+/* Posisi foto wanita */
+.portrait-bride {
+  background: linear-gradient(145deg, #e7e0d3, #b5c2ca);
+}
+
+.portrait-bride img {
+  object-position: center 25%;
+}
+
+/* Placeholder jika foto belum dimasukkan */
+.portrait span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 12px;
+  color: var(--navy);
+  font-size: 0.8rem;
+}
+
+/* ========================================
+   6. ACARA DAN HITUNG MUNDUR
+======================================== */
+.event {
+  background: var(--paper);
+  text-align: center;
+}
+
+.event h2,
+.gallery h2,
+.gift h2,
+.rsvp h2 {
+  font-size: clamp(2.4rem, 7vw, 3.4rem);
+  color: var(--navy);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.leaf-divider {
+  color: #829db2;
+  font-size: 2rem;
+  letter-spacing: 0.3em;
+  margin-bottom: 24px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 30px auto 42px;
+}
+
+.countdown div {
+  min-width: 68px;
+  padding: 12px 10px;
+  background: var(--navy);
+  color: var(--ivory);
+  display: grid;
+  gap: 3px;
+}
+
+.countdown strong {
+  font: 2rem "Cormorant Garamond", serif;
+}
+
+.countdown span {
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 760px;
+  margin: auto;
+}
+
+.event-card {
+  border: 1px solid #d5d0c4;
+  padding: 28px 18px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.event-icon {
+  color: var(--gold);
+  font-size: 1.6rem;
+}
+
+.event-card h3,
+.location-box h3 {
+  font-size: 1.8rem;
+  color: var(--navy);
+  margin: 10px 0;
+}
+
+.event-card p {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.event-card .event-date {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.location-box {
+  margin: 28px auto 0;
+  max-width: 500px;
+}
+
+.location-box p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.outline-btn {
+  background: transparent;
+  border: 1px solid var(--navy2);
+  color: var(--navy);
+  margin-top: 8px;
+}
+
+.outline-btn:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+
+/* ========================================
+   7. GALERI FOTO
+======================================== */
+.gallery {
+  background: var(--ivory);
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 850px;
+  margin: 30px auto 0;
+}
+
+.gallery-photo {
+  min-width: 0;
+  min-height: 230px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: var(--navy);
+  font-size: 0.8rem;
+  border: 7px solid var(--white);
+  outline: 1px solid var(--line);
+  background: linear-gradient(#4c142a);
+}
+
+.photo-two {
+  background: linear-gradient(#4c142a);
+}
+
+.photo-three {
+  background: linear-gradient(#4c142a);
+}
+
+/* ========================================
+   8. HADIAH DIGITAL
+======================================== */
+.gift {
+  background: var(--paper);
+  text-align: center;
+}
+
+.bank-card {
+  width: min(100%, 390px);
+  margin: 30px auto 0;
+  padding: 28px;
+  background: var(--navy);
+  color: var(--ivory);
+  text-align: left;
+}
+
+.bank-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  opacity: 0.75;
+}
+
+.bank-card h3 {
+  font-size: 2rem;
+  margin: 18px 0 8px;
+}
+
+.account-number {
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  overflow-wrap: anywhere;
+}
+
+.bank-card p {
+  font-size: 0.86rem;
+}
+
+.bank-card .outline-btn {
+  border-color: #d5deea;
+  color: var(--white);
+}
+
+.bank-card .outline-btn:hover {
+  background: var(--white);
+  color: var(--navy);
+}
+
+/* ========================================
+   9. UCAPAN DAN RSVP
+======================================== */
+.rsvp {
+  background: var(--ivory);
+  text-align: center;
+}
+
+.rsvp form {
+  width: min(100%, 520px);
+  margin: 28px auto 0;
+  text-align: left;
+  display: grid;
+  gap: 9px;
+}
+
+.rsvp label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.rsvp input,
+.rsvp select,
+.rsvp textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid #cbd2d8;
+  border-radius: 0;
+  background: #fffdf8;
+  color: var(--ink);
+  outline-color: var(--navy2);
+}
+
+.rsvp textarea {
+  resize: vertical;
+}
+
+.rsvp form .primary-btn {
+  margin-top: 12px;
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+}
+
+.rsvp form .primary-btn:hover {
+  background: var(--navy2);
+}
+
+.form-note {
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+/* ========================================
+   10. PENUTUP
+======================================== */
+.closing {
+  text-align: center;
+  background: var(--navy);
+  color: var(--ivory);
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.closing .eyebrow {
+  color: #d8c8a5;
+}
+
+.closing h2 {
+  max-width: 650px;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  line-height: 1.1;
+  margin: 0 auto;
+}
+
+.closing .ornament {
+  margin: 20px 0;
+}
+
+.closing-names {
+  font-size: 2rem;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.closing-names i {
+  color: var(--gold);
+  padding: 0 6px;
+}
+
+.small-botanical {
+  opacity: 0.35;
+  top: 20px;
+  left: -55px;
+}
+
+footer {
+  background: #ffffff;
+  color: #4c142a;
+  text-align: center;
+  font-size: 0.7rem;
+  padding: 18px;
+  letter-spacing: 0.08em;
+}
+
+/* ========================================
+   11. TOMBOL MUSIK
+======================================== */
+.music-control {
+  position: fixed;
+  right: 16px;
+  top: 16px;
+  z-index: 100;
+}
+
+.music-control button {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 30px;
+  padding: 9px 13px;
+  color: var(--white);
+  background: var(--navy);
+  box-shadow: 0 4px 16px #0002;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+/* ========================================
+   12. ANIMASI SAAT SCROLL
+======================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================
+   13. TABLET DAN HP
+======================================== */
+@media (max-width: 768px) {
+  .section {
+    padding: 68px 20px;
+  }
+
+  .couple-grid {
+    gap: 18px;
+    max-width: 600px;
+  }
+
+  .portrait {
+    max-width: 220px;
+    height: 280px;
+  }
+
+  .person h2 {
+    font-size: 2rem;
+  }
+
+  .gallery-grid {
+    gap: 10px;
+  }
+
+  .gallery-photo {
+    min-height: 190px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 65px 19px;
+  }
+
+  .cover {
+    min-height: 100svh;
+    padding: 55px 25px 75px;
+  }
+
+  .cover-wash {
+    inset: 12px;
+  }
+
+  .botanical {
+    width: 135px;
+    height: 235px;
+    opacity: 0.55;
+  }
+
+  .cover h1 {
+    font-size: clamp(3rem, 14vw, 4.6rem);
+  }
+
+  .cover-date {
+    font-size: 0.8rem;
+  }
+
+  /* Pasangan tersusun vertikal di HP */
+  .couple-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .person {
+    width: 100%;
+  }
+
+  .portrait {
+    width: 220px;
+    max-width: 100%;
+    height: 280px;
+  }
+
+  .person h2 {
+    font-size: 2.2rem;
+    margin-top: 18px;
+  }
+
+  .ampersand {
+    padding-top: 0;
+    line-height: 1;
+    font-size: 2.2rem;
+  }
+
+  .event-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .countdown {
+    gap: 7px;
+  }
+
+  .countdown div {
+    min-width: 0;
+    flex: 1;
+    padding: 10px 5px;
+  }
+
+  .countdown strong {
+    font-size: 1.7rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery-photo {
+    min-height: 180px;
+  }
+
+  .gallery-photo:last-child {
+    grid-column: 1 / -1;
+    min-height: 210px;
+  }
+
+  .bank-card {
+    padding: 24px 20px;
+  }
+
+  .music-control {
+    right: 12px;
+    top: 12px;
+  }
+
+  .closing {
+    min-height: 400px;
+  }
+
+  .cover-bottom {
+    font-size: 0.5rem;
+    letter-spacing: 0.1em;
+  }
+}
+
+/* ========================================
+   14. AKSESIBILITAS
+======================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ==========================================
+   AESTHETIC FLORAL WEDDING DECORATION
+   Edo & Elsa | Burgundy Romantic Theme
+========================================== */
+
+:root {
+  --burgundy: #4c1429;
+  --burgundy-light: #6b2941;
+  --ivory: #fbf5eb;
+  --dusty-rose: #e8bfc1;
+  --blush: #f5ded7;
+  --champagne: #c5a66a;
+  --sage: #9ba995;
+}
+
+/* Dasar untuk ornamen dekoratif */
+.section {
+  position: relative;
+  isolation: isolate;
+}
+
+.floral-decor {
+  position: absolute;
+  z-index: 0;
+  width: 190px;
+  height: 230px;
+  pointer-events: none;
+  opacity: .68;
+  background:
+    /* Kelopak bunga */
+    radial-gradient(ellipse 25px 43px at 48% 18%,
+      #e8bfc1 0 75%, transparent 78%),
+    radial-gradient(ellipse 25px 43px at 68% 34%,
+      #f5ded7 0 75%, transparent 78%),
+    radial-gradient(ellipse 25px 43px at 52% 48%,
+      #dba6ae 0 75%, transparent 78%),
+    radial-gradient(ellipse 25px 43px at 31% 35%,
+      #f5ded7 0 75%, transparent 78%),
+    radial-gradient(ellipse 25px 43px at 34% 17%,
+      #dba6ae 0 75%, transparent 78%),
+    /* Pusat bunga */
+    radial-gradient(circle at 49% 32%,
+      #c5a66a 0 5px, transparent 6px),
+    /* Daun */
+    radial-gradient(ellipse 15px 36px at 23% 63%,
+      #9ba995 0 70%, transparent 74%),
+    radial-gradient(ellipse 14px 32px at 74% 70%,
+      #aab5a0 0 70%, transparent 74%);
+  filter: drop-shadow(0 5px 8px rgba(76,20,41,.08));
+}
+
+/* Posisi bunga pada tiap section */
+.floral-top-left {
+  top: -28px;
+  left: -55px;
+  transform: rotate(-28deg);
+}
+
+.floral-bottom-right {
+  bottom: -48px;
+  right: -52px;
+  transform: rotate(145deg);
+}
+
+/* Lapisan dekorasi cahaya blur */
+.intro,
+.event,
+.gallery,
+.gift,
+.rsvp {
+  overflow: hidden;
+}
+
+.intro::before,
+.event::before,
+.gallery::before,
+.gift::before,
+.rsvp::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  top: -95px;
+  right: -85px;
+  background:
+    radial-gradient(circle,
+      rgba(232,191,193,.75),
+      rgba(245,222,215,.35) 45%,
+      transparent 72%);
+  filter: blur(24px);
+  pointer-events: none;
+}
+
+/* Motif floral halus di cover */
+.cover {
+  background:
+    radial-gradient(ellipse at 0% 0%,
+      rgba(232,191,193,.16), transparent 35%),
+    radial-gradient(ellipse at 100% 90%,
+      rgba(197,166,106,.15), transparent 32%),
+    var(--burgundy);
+}
+
+.cover-wash {
+  border: 1px solid rgba(197,166,106,.72);
+}
+
+/* Detail kecil pada nama mempelai */
+.cover h1 {
+  text-shadow: 0 3px 25px rgba(0,0,0,.08);
+}
+
+.cover h1 i,
+.closing-names i {
+  color: var(--champagne);
+}
+
+/* Garis emas dan simbol dekoratif */
+.ornament,
+.leaf-divider {
+  color: var(--champagne);
+}
+
+.ornament span {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--champagne),
+    transparent
+  );
+}
+
+/* Bingkai foto bergaya editorial */
+.portrait {
+  position: relative;
+  width: min(100%, 240px);
+  height: 300px;
+  padding: 7px;
+  border: 1px solid var(--champagne);
+  outline: 5px solid #fffdf8;
+  outline-offset: -8px;
+  background: var(--blush);
+  box-shadow: 0 12px 30px rgba(76,20,41,.13);
+  overflow: hidden;
+}
+
+.portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Galeri foto */
+.gallery-photo {
+  position: relative;
+  overflow: hidden;
+  padding: 7px;
+  border: 1px solid var(--champagne);
+  background: var(--blush);
+  box-shadow: 0 10px 24px rgba(76,20,41,.12);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.gallery-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+
+.gallery-photo:hover {
+  transform: translateY(-4px) rotate(-1deg);
+  box-shadow: 0 16px 32px rgba(76,20,41,.17);
+}
+
+.gallery-photo:hover img {
+  transform: scale(1.04);
+}
+
+/* Kartu acara dengan garis champagne */
+.event-card {
+  position: relative;
+  border: 1px solid rgba(197,166,106,.65);
+  box-shadow: 0 8px 24px rgba(76,20,41,.045);
+}
+
+.event-card::before {
+  content: "✧";
+  display: block;
+  color: var(--champagne);
+  font-size: 19px;
+  margin-bottom: 6px;
+}
+
+.event-card .event-icon {
+  display: none;
+}
+
+/* Countdown elegan */
+.countdown div {
+  border: 1px solid var(--champagne);
+  box-shadow: 0 5px 14px rgba(76,20,41,.08);
+}
+
+/* Kartu hadiah */
+.bank-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--champagne);
+}
+
+.bank-card::after {
+  content: "❦";
+  position: absolute;
+  right: 15px;
+  top: 8px;
+  color: rgba(197,166,106,.35);
+  font-size: 78px;
+  pointer-events: none;
+}
+
+/* Tombol musik */
+.music-control button {
+  border: 1px solid var(--champagne);
+  backdrop-filter: blur(10px);
+}
+
+/* Ornamen tidak menghalangi klik dan teks */
+.floral-decor {
+  user-select: none;
+}
+
+/* Tampilan ponsel */
+@media (max-width: 600px) {
+  .floral-decor {
+    width: 125px;
+    height: 160px;
+    opacity: .48;
+  }
+
+  .floral-top-left {
+    top: -20px;
+    left: -45px;
+  }
+
+  .floral-bottom-right {
+    bottom: -25px;
+    right: -40px;
+  }
+
+  .portrait {
+    width: 190px;
+    height: 245px;
+  }
+
+  .gallery-photo {
+    padding: 5px;
+  }
+}
+
+/* Hormati pengaturan animasi perangkat */
+@media (prefers-reduced-motion: reduce) {
+  .gallery-photo,
+  .gallery-photo img {
+    transition: none;
+  }
+}
+
+/* Bingkai foto dekorasi */
+#cover {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+#cover .cover-wash {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #4b142a;
+}
+
+/* Posisi foto bunga */
+#cover .floral-frame {
+  position: absolute;
+  z-index: 0;
+  width: 280px;
+  height: 360px;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.8;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 20%,
+    black 75%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 20%,
+    black 75%,
+    transparent
+  );
+}
+
+#cover .floral-left {
+  top: -40px;
+  left: -75px;
+  transform: rotate(-12deg);
+}
+
+#cover .floral-right {
+  right: -75px;
+  bottom: -45px;
+  transform: rotate(168deg);
+}
+
+#cover .floral-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(2px) saturate(0.8);
+  opacity: 0.9;
+}
+
+/* Isi dan teks tetap di atas dekorasi */
+#cover .cover-content,
+#cover .cover-bottom {
+  position: relative;
+  z-index: 2;
+}
+
+/* Tampilan ponsel */
+@media (max-width: 600px) {
+  #cover .floral-frame {
+    width: 180px;
+    height: 250px;
+    opacity: 0.65;
+  }
+
+  #cover .floral-left {
+    top: -25px;
+    left: -65px;
+  }
+
+  #cover .floral-right {
+    right: -65px;
+    bottom: -25px;
+  }
+}
+
+
+
+/* Foto background cover asli, tanpa blur */
+#cover {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+#cover .cover-photo {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#cover .cover-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+
+  /* Tampilkan gambar asli */
+  filter: none;
+  transform: none;
+  opacity: 1;
+}
+
+/* Hilangkan lapisan warna agar foto tidak tertutup */
+#cover .cover-wash {
+  display: none;
+}
+
+/* Konten tetap berada di atas foto */
+#cover .cover-content,
+#cover .cover-bottom {
+  position: relative;
+  z-index: 2;
+}
+
+

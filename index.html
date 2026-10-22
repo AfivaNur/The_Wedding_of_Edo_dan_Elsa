@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#142c4c">
+  <meta name="description" content="Undangan pernikahan digital">
+  <title>Undangan Pernikahan | Nama Mempelai</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio id="weddingMusic" loop preload="none" src="wedding_ints.mp3"></audio>
+  <div class="music-control"><button id="musicToggle" type="button" aria-pressed="false">♫ <span id="musicLabel">Putar Musik</span></button></div>
+
+  <main>
+   
+
+    <section class="cover section" id="cover">
+
+      <div class="cover-wash"></div>
+    
+      <!-- Satu foto background dekorasi -->
+      <div class="cover-photo" aria-hidden="true">
+        <img src="aset/bg.png" alt="">
+      </div>
+  
+      <!-- Isi sampul: pertahankan ID agar JS tetap berfungsi -->
+      <div class="cover-content">
+        <p class="eyebrow">THE WEDDING OF</p>
+    
+        <h1>
+          <span data-groom>Nama Pria</span>
+          <i>&amp;</i>
+          <span data-bride>Nama Wanita</span>
+        </h1>
+    
+        <div class="ornament"><span></span> ❦ <span></span></div>
+    
+        <p class="cover-date" data-date-display>Hari Minggu, 00 Bulan 2027</p>
+        <p class="guest-intro">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+        <p class="guest-name" id="guestName">Tamu Undangan</p>
+    
+        <button class="primary-btn" id="openInvitation" type="button">
+          Buka Undangan <span>↓</span>
+        </button>
+
+        <p class="small-note">
+          Dengan penuh rasa syukur, kami mengundang Anda.
+        </p>
+      </div>
+    
+    </section>    
+
+    <section class="event section reveal" id="acara">
+      <div class="leaf-divider">❧ ❦ ❧</div>
+      <p class="eyebrow">SAVE THE DATE</p>
+      <h2>Hari Bahagia Kami</h2>
+      <p class="body-copy">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Anda berkenan hadir dan memberikan doa restu.</p>
+      <div class="countdown" aria-label="Hitung mundur pernikahan">
+        <div><strong id="days">00</strong><span>Hari</span></div>
+        <div><strong id="hours">00</strong><span>Jam</span></div>
+        <div><strong id="minutes">00</strong><span>Menit</span></div>
+        <div><strong id="seconds">00</strong><span>Detik</span></div>
+      </div>
+      <div class="event-grid">
+        <article class="event-card">
+          <span class="event-icon">✧</span><h3>Akad Nikah</h3>
+          <p class="event-date" data-date-display>Hari, 00 Bulan 20XX</p>
+          <p data-akad>08.00 WIB – selesai</p>
+        </article>
+        <article class="event-card">
+          <span class="event-icon">❦</span><h3>Resepsi</h3>
+          <p class="event-date" data-date-display>Hari, 00 Bulan 20XX</p>
+          <p data-resepsi>11.00 WIB – selesai</p>
+        </article>
+      </div>
+      <div class="location-box">
+        <h3>Lokasi Acara</h3>
+        <p data-location>Nama gedung / alamat lengkap acara, kota</p>
+        <a class="outline-btn" id="mapsLink" href="https://maps.google.com" target="_blank" rel="noopener">Lihat Google Maps ↗</a>
+      </div>
+    </section>
+    
+
+    <!-- <section class="event section reveal" id="acara">
+      <div class="leaf-divider">❧ ❦ ❧</div>
+      <p class="eyebrow">SAVE THE DATE</p>
+      <h2>Hari Bahagia Kami</h2>
+      <p class="body-copy">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Anda berkenan hadir dan memberikan doa restu.</p>
+      <div class="countdown" aria-label="Hitung mundur pernikahan">
+        <div><strong id="days">00</strong><span>Hari</span></div>
+        <div><strong id="hours">00</strong><span>Jam</span></div>
+        <div><strong id="minutes">00</strong><span>Menit</span></div>
+        <div><strong id="seconds">00</strong><span>Detik</span></div>
+      </div>
+      <div class="event-grid">
+        <article class="event-card">
+          <span class="event-icon">✧</span><h3>Akad Nikah</h3>
+          <p class="event-date" data-date-display>Hari, 00 Bulan 20XX</p>
+          <p data-akad>08.00 WIB – selesai</p>
+        </article>
+        <article class="event-card">
+          <span class="event-icon">❦</span><h3>Resepsi</h3>
+          <p class="event-date" data-date-display>Hari, 00 Bulan 20XX</p>
+          <p data-resepsi>11.00 WIB – selesai</p>
+        </article>
+      </div>
+      <div class="location-box">
+        <h3>Lokasi Acara</h3>
+        <p data-location>Nama gedung / alamat lengkap acara, kota</p>
+        <a class="outline-btn" id="mapsLink" href="https://maps.google.com" target="_blank" rel="noopener">Lihat Google Maps ↗</a>
+      </div>
+    </section> -->
+
+    <section class="gallery section reveal" id="galeri">
+      <p class="eyebrow">OUR MOMENTS</p><h2>Galeri Bahagia</h2>
+      <p class="body-copy">Beberapa momen yang ingin kami bagikan bersama Anda.</p>
+      <div class="gallery-grid">
+        <div class="gallery-photo photo-one"><img src="aset/edo4.jpeg" alt="Foto"></span></div>
+        <div class="gallery-photo photo-two"><img src="aset/edo3.jpeg" alt="Foto"></div>
+        <div class="gallery-photo photo-three"><img src="aset/edo5.jpeg" alt="Foto"></div>
+      </div>
+      <p class="small-note">Semoga setiap langkah ke depan selalu dipenuhi cinta, kebahagiaan, dan keberkahan.</p>
+    </section>
+
+    <section class="gift section reveal" id="hadiah">
+      <div class="leaf-divider">❧ ❦ ❧</div><p class="eyebrow">WEDDING GIFT</p>
+      <h2>Hadiah Pernikahan</h2>
+      <p class="body-copy">Doa restu Anda merupakan hadiah terindah bagi kami. Namun jika ingin berbagi tanda kasih, dapat melalui informasi berikut.</p>
+      <div class="bank-card">
+        <span class="bank-label">BANK / E-WALLET</span>
+        <h3>[DANA]</h3>
+        <p class="account-number" id="accountNumber">[082375637896]</p>
+        <p>a.n. Elsa Suharyani</p>
+        <button class="outline-btn" id="copyAccount" type="button">Salin Nomor Rekening</button>
+      </div>
+    </section>
+
+    <section class="rsvp section reveal" id="rsvp">
+      <p class="eyebrow">ANUKA RSVP</p><h2>Ucapan &amp; Doa</h2>
+      <p class="body-copy">Tuliskan doa terbaik dan konfirmasi kehadiran Anda untuk kedua mempelai.</p>
+      <form id="rsvpForm">
+        <label for="name">Nama</label><input id="name" name="name" required placeholder="Nama Anda">
+        <label for="attendance">Konfirmasi kehadiran</label>
+        <select id="attendance" name="attendance" required>
+          <option value="">Pilih konfirmasi</option><option>Hadir</option><option>Maaf, belum bisa hadir</option>
+        </select>
+        <label for="message">Ucapan &amp; doa</label><textarea id="message" name="message" rows="4" required placeholder="Tuliskan ucapan dan doa..."></textarea>
+        <button class="primary-btn" type="submit">Kirim via WhatsApp ↗</button>
+        <p class="form-note">Form ini membuka WhatsApp dengan pesan yang sudah disiapkan.</p>
+      </form>
+    </section>
+
+    <section class="closing section reveal">
+      <div class="botanical botanical-left small-botanical" aria-hidden="true"></div>
+      <p class="eyebrow">TERIMA KASIH</p>
+      <h2>Merupakan kebahagiaan bagi kami atas doa dan kehadiran Anda.</h2>
+      <div class="ornament"><span></span> ❦ <span></span></div>
+      <p class="closing-names"><span data-groom>Nama Pria</span> <i>&amp;</i> <span data-bride>Nama Wanita</span></p>
+      <p class="small-note">Wassalamu’alaikum warahmatullahi wabarakatuh</p>
+    </section>
+  </main>
+  <footer>Made with love • Undangan Pernikahan</footer>
+  <script src="script.js"></script>
+</body>
+</html>
